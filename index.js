@@ -51,15 +51,16 @@ app.get('/', (req,res) => res.send(req.body));
 
 app.post('/createmeeting', (req, res) => {
     console.log("request",req);
-    email = req.body.email;
-    topic =req.body.topic;
-    console.log(topic,"topic")
+    // email = req.body.email;
+    // topic =req.body.topic;
+    email = "umadevisse123@gmail.com";
+    // console.log(topic,"topic")
     console.log(email);    
     var options = {
       method: "POST",
       uri: "https://api.zoom.us/v2/users/" + email + "/meetings",
       body: {
-        // topic: "test for create meeting",
+        topic: "zoom Integration",
         type: 1,
         settings: {
           host_video: "false",
@@ -87,6 +88,9 @@ app.post('/createmeeting', (req, res) => {
         console.log("API call failed, reason ", err);
       });
   });
+
+
+
   app.get('/getuser', (req, res) =>{
   var options = {
     method: 'GET',
