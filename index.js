@@ -91,7 +91,7 @@ app.post('/createmeeting', (req, res) => {
 
 
 
-  app.get('/getuser', (req, res) =>{
+  app.get('/getmeeting', (req, res) =>{
   var options = {
     method: 'GET',
     // Use the `me` keyword for the request below. 
@@ -105,7 +105,7 @@ app.post('/createmeeting', (req, res) => {
     if (error) throw new Error(error);
   
     console.log(body);
-    res.send(response);
+    res.send(JSON.stringify(response));
   });
 });
 
